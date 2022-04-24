@@ -16,7 +16,9 @@ public class ProductRepository {
         products = new ArrayList<>(Arrays.asList(
                 new Product(1L, "Bread"),
                 new Product(2L, "Milk"),
-                new Product(3L, "Apple")
+                new Product(3L, "Apple"),
+                new Product(4L, "Orange"),
+                new Product(5L, "Sugar")
         ));
     }
 
@@ -25,5 +27,9 @@ public class ProductRepository {
                 .filter(p->p.getId().equals(id))
                 .findFirst()
                 .orElseThrow(()-> new RuntimeException());
+    }
+
+    public List<Product> findAll() {
+        return products;
     }
 }

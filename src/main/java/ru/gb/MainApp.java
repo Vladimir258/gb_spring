@@ -7,23 +7,34 @@ public class MainApp {
         // todo 1 Создаем контекст
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("ru");
         OrderService orderService = context.getBean(OrderService.class);
-
+        ProductService productService = context.getBean(ProductService.class);
+        Cart cart = context.getBean(Cart.class);
         orderService.createOrderFromProduct(3L);
 
-//        Box box1 = context.getBean(Box.class);
-//        Box box2 = context.getBean(Box.class);
-//
-//        System.out.println(box1.getColor());
-//        System.out.println(box2.getColor());
-//
-//        box1.setColor("red");
-//        System.out.println(box1.getColor());
-//        System.out.println(box2.getColor());
-//
-//        box2.setColor("green");
-//        System.out.println(box1.getColor());
-//        System.out.println(box2.getColor());
+        for (Product p :orderService.createProductsList()) {
+            System.out.println(p);
+        }
 
+        System.out.println("============================");
+
+        cart.addProductToCart(2L);
+        cart.showProductInCart();
+        System.out.println("--------------");
+        cart.addProductToCart(1L);
+        cart.showProductInCart();
+        System.out.println("--------------");
+        cart.addProductToCart(2L);
+        cart.showProductInCart();
+        System.out.println("--------------");
+        cart.addProductToCart(3L);
+        cart.showProductInCart();
+        System.out.println("--------------");
+        cart.deletProductFromCart(productService.findById(3L));
+        cart.showProductInCart();
+        System.out.println("--------------");
+        cart.deletProductFromCart(productService.findById(3L));
+        cart.showProductInCart();
+        System.out.println("--------------");
         context.close();
     }
 }
