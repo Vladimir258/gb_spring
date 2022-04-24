@@ -1,14 +1,13 @@
-package ry.gb;
+package ru.gb;
 
 import lombok.*;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 public class Product {
-    private Integer id;
+    private Long id;
     private String title;
-    private Float cost;
 }
