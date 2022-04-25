@@ -8,8 +8,12 @@ import java.util.List;
 @Component
 public class ProductService {
 
-    @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     public String getTitleById(Long id) {
         return productRepository.findById(id).getTitle();

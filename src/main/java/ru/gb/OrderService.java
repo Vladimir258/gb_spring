@@ -7,8 +7,13 @@ import java.util.List;
 
 @Component
 public class OrderService {
-    @Autowired
+
     private ProductService productService;
+
+    @Autowired
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
 
     public void createOrderFromProduct(Long productId) {
         System.out.println("Заказ создан:");
