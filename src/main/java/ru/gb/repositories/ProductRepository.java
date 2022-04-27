@@ -36,6 +36,9 @@ public class ProductRepository {
         return Collections.unmodifiableList(products);
     }
 
+    public void add(Product product) {
+        products.add(product);
+    }
 //    public void removeById(Long id) {
 //        products.removeIf(s->s.getId().equals(id));
 //    }

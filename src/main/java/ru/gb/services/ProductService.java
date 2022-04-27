@@ -28,4 +28,8 @@ public class ProductService {
     public List<Product> findAll() {
         return productRepository.findAll();
     }
+
+    public void add(Product product) {
+        productRepository.add(product);
+    }
 }

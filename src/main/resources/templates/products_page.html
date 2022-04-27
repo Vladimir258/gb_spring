@@ -10,7 +10,8 @@
             <span th:text="${'Name: ' + s.title + ' ID: ' + s.id}"></span><br>
             <a th:href="@{'/products/' + ${s.id}}">На страницу продукта</a>
         </div>
-        <span th:text="${'Products count: ' + students.size()}"></span>
+        <span th:text="${'Products count: ' + students.size()}"></span><br>
+        <a th:href="@{'/add_form'}">Добавить продукт</a>
     </body>
 </html>
 
