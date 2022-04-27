@@ -2,6 +2,8 @@ package ru.gb;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import ru.gb.model.Product;
+import ru.gb.repositories.ProductRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;

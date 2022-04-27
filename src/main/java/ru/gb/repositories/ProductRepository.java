@@ -1,6 +1,7 @@
-package ru.gb;
+package ru.gb.repositories;
 
 import org.springframework.stereotype.Component;
+import ru.gb.model.Product;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -34,4 +35,8 @@ public class ProductRepository {
     public List<Product> findAll() {
         return Collections.unmodifiableList(products);
     }
+
+//    public void removeById(Long id) {
+//        products.removeIf(s->s.getId().equals(id));
+//    }
 }

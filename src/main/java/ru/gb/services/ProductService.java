@@ -1,7 +1,9 @@
-package ru.gb;
+package ru.gb.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import ru.gb.model.Product;
+import ru.gb.repositories.ProductRepository;
 
 import java.util.List;
 

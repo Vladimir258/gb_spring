@@ -1,4 +1,4 @@
-package ru.gb;
+package ru.gb.model;
 
 import lombok.*;
 
