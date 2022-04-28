@@ -17,12 +17,20 @@ public class ProductRepository {
     @PostConstruct
     public void init() {
         products = new ArrayList<>(Arrays.asList(
-                new Product(1L, "Bread"),
-                new Product(2L, "Milk"),
-                new Product(3L, "Apple"),
-                new Product(4L, "Orange"),
-                new Product(5L, "Sugar")
+                new Product(1L, "Bread", 20F),
+                new Product(2L, "Milk", 10F),
+                new Product(3L, "Apple", 5F),
+                new Product(4L, "Orange", 7F),
+                new Product(5L, "Sugar", 35F)
         ));
+    }
+
+    public List<Product> findAll() {
+        return Collections.unmodifiableList(products);
+    }
+
+    public void deleteById(Long id) {
+        products.removeIf(s->s.getId().equals(id));
     }
 
     public Product findById(final Long id) {
@@ -32,14 +40,8 @@ public class ProductRepository {
                 .orElseThrow(()-> new RuntimeException());
     }
 
-    public List<Product> findAll() {
-        return Collections.unmodifiableList(products);
-    }
-
-    public void add(Product product) {
-        products.add(product);
-    }
-//    public void removeById(Long id) {
-//        products.removeIf(s->s.getId().equals(id));
+//    public void add(Product product) {
+//        products.add(product);
 //    }
+
 }
